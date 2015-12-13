@@ -11,9 +11,9 @@ branches:
 sudo: required
 
 before_install:
-  - apt-get -qq update
+  - sudo apt-get -qq update
+  - sudo apt-get -qq -y install libuv-dev libqt4-dev libqt4-private-dev
   - git submodule update --init --recursive
-  - apt-get -qq -y install libuv-dev libqt4-dev libqt4-private-dev
 
 script:
   - ./build.sh
