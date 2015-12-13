@@ -8,17 +8,12 @@ branches:
   only:
     - master
 
-sudo: false
-
-addons:
-  apt:
-    packages:
-    - libqt4-dev
-    - libqt4-private-dev
-    - libuv-dev
+sudo: required
 
 before_install:
+  - apt-get -qq update
   - git submodule update --init --recursive
+  - apt-get -qq -y install libuv-dev libqt4-dev libqt4-private-dev
 
 script:
   - ./build.sh
