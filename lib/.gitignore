@@ -1,0 +1,4 @@
+pkgconfig
+*.a
+*.prl
+*.pc
